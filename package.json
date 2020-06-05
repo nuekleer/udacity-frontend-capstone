@@ -1,0 +1,28 @@
+{
+  "name": "udacity-frontend-capstone",
+  "version": "1.0.0",
+  "description": "Final Project For Frontend Nanodegree",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuekleer/udacity-frontend-capstone.git"
+  },
+  "author": "Matt Christensen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nuekleer/udacity-frontend-capstone/issues"
+  },
+  "homepage": "https://github.com/nuekleer/udacity-frontend-capstone#readme",
+  "dependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0"
+  }
+}
