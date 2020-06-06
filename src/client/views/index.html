@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Express and Webpack App</title>
-    <link rel="shortcut icon" href="#">
-</head>
-<body>
-    <h1>Expack</h1>
-    <p class="description">Express and Webpack Boilerplate App</p>
-    <script>
-        // Check that service workers are supported
-        if ('serviceWorker' in navigator) {
-            if(location.port != 8080){
-            // Use the window load event to keep the page load performant
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js');
-                });
+    <head>
+        <meta charset="utf-8">
+        <title>Udacity Frontend Developer Capstone Project</title>
+    </head>
+    <body>
+        <header>
+            <h1>Travel Planner</h1>
+            <nav>
+                <!-- add trip button -->
+            </nav>
+        </header>
+        <div class="container">
+            <section>
+                <!-- image goes here-->
+            </section>
+            <section>
+                <!-- content sections-->
+                <div id="">location</div>
+                <div>date</div>
+                <div>buttons</div>
+                <div>days away</div>
+                <div>weather</div>
+            </section>
+        </div>
+        <footer>
+            Matt Christensen
+        </footer>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                if(location.port != 8080){
+                // Use the window load event to keep the page load performant
+                    window.addEventListener('load', () => {
+                        navigator.serviceWorker.register('/service-worker.js');
+                    });
+                }
             }
-        }
-    </script>
+        </script>
 </body>
 </html>
