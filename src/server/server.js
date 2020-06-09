@@ -64,8 +64,6 @@ app.post('/callGN', function (req, res){
   newEntry = {
     lat: resp.geonames[0].lat,
     lng: resp.geonames[0].lng
-    //countryCode: resp.geonames[0].countryCode,
-    //countryName: resp.geonames[0].countryName
   }
   newProjectData = {
       countryName: resp.geonames[0].countryName,
@@ -79,8 +77,38 @@ app.post('/callGN', function (req, res){
     console.error(err);
     console.log("Unable to look up city at this time");
 });
-
 })
+
+//pixabay api call
+app.post('/getPic', async (req, res) =>{
+    const request = await fetch(process.env.PB_EP+"key="+process.env.PB_KEY+"&q="+req.body.city+"+"+projectData[0].countryName+"&image_type=photo&pretty=true&per_page=3&safesearch=true");
+    try {
+      // Transform into JSON
+      const allData = await request.json();
+      newEntry = {
+        countryName: projectData[0].countryName,
+        city: projectData[0].city,
+        startDate: projectData[0].startDate,
+        endDate: projectData[0].endDate,
+        maxTemp: projectData[0].maxTemp,
+        minTemp: projectData[0].minTemp,
+        weatherD: projectData[0].weatherD,
+        picURL: allData.hits[0].webformatURL
+      }
+      projectData[0] = newEntry;
+      //return allData;
+    }
+    catch(error) {
+      console.log("error", error);
+      // appropriately handle the error
+      alert("Photos unavailable at this time");
+    }
+})
+
+//update ui
+app.get('/show', function (req, res) {
+    res.send(projectData);
+});
 
 // designates what port the app will listen to for incoming requests
 app.listen(3000, function () {

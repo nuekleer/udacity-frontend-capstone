@@ -1,6 +1,7 @@
 require('./favicon.ico')
 import { postData } from './js/functions'
 import { postWeather } from './js/functions'
+import { postPix } from './js/functions'
 import { handleSubmit } from './js/app.js'
 import { handleShowForm } from './js/app.js'
 import './styles/resets.scss'
@@ -12,6 +13,7 @@ import './styles/footer.scss'
 export {
     postData,
     postWeather,
+    postPix,
     handleSubmit,
     handleShowForm
 }
