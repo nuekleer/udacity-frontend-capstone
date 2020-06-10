@@ -110,3 +110,7 @@ export const showData = async (url = "") =>{
         alert("Unable to display data at this time");
     }
   }
+
+  export function sum(a, b) {
+    return a + b;
+  }
