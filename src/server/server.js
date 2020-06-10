@@ -49,12 +49,13 @@ app.post('/getWeather', async (req, res) =>{
         weatherD: allData.data[0].weather.description
       }
       projectData[0] = newEntry;
-      return allData;
+      //return allData;
+      res.send(allData);
     }
     catch(error) {
       console.log("error", error);
       // appropriately handle the error
-      alert("Weather data unavailable at this time");
+      console.log("Weather data unavailable at this time");
     }
 })
 
@@ -97,17 +98,18 @@ app.post('/getPic', async (req, res) =>{
       }
       projectData[0] = newEntry;
       //return allData;
+      res.send(allData);
     }
     catch(error) {
       console.log("error", error);
       // appropriately handle the error
-      alert("Photos unavailable at this time");
+      console.log("Photos unavailable at this time");
     }
 })
 
 //update ui
 app.get('/show', function (req, res) {
-    res.send(projectData);
+    res.send(projectData[0]);
 });
 
 // designates what port the app will listen to for incoming requests

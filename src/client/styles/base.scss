@@ -1,0 +1,66 @@
+$base-font: Verdana;
+$buttonHover:rgb(175, 76, 76);
+$buttonColor:#4CAF50;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: $base-font;
+    margin: 15px;
+}
+
+#current-trip{
+    display: none;
+    background: tan;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.location-form{
+    text-align: center;
+    margin: auto;
+}
+
+.container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+section{
+    padding: 20px;
+}
+
+img{
+    width: 100%;
+}
+
+section.current-trip-info{
+    div{
+        margin-bottom:15px
+    }
+    p{
+        margin-bottom: 15px;
+    }
+    font-size: 1.5em;
+}
+
+button{
+    background-color: $buttonColor;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
+button:hover{
+    background-color: $buttonHover;
+}

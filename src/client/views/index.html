@@ -14,32 +14,49 @@
         </header>
         <section class="location-form">
             <form id="add-trip-form">
-                <label for="url">Enter a City Name</label>
+                <label for="url">Enter a City Name:  </label>
                 <input type="text" name="city" id="city"
                     placeholder="Pontiac" 
-                    required>
-                    <label for="start-date">Start Date</label>
-                    <input type="date" name="start-date" id="start-date" required>
-                    <label for="end-date">End Date</label>
-                    <input type="date" name="end-date" id="end-date" required>
+                    required><br/>
+                    <label for="start-date">Start Date:  </label>
+                    <input type="date" name="start-date" id="start-date" required><br/>
+                    <label for="end-date">End Date:  </label>
+                    <input type="date" name="end-date" id="end-date" required><br/>
                 <input type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event, '/callGN')" onsubmit="return Client.handleSubmit(event, '/callGN')">
             </form>
         </section>
         <div class="container">
+            <div id="current-trip">
+            <div class="flex-container">
             <section>
-                <!-- image goes here-->
+                <img id="current-trip-pic" src="" />
             </section>
-            <section>
+            <section class="current-trip-info">
                 <!-- content sections-->
-                <div id="">location</div>
-                <div>date</div>
-                <div>buttons</div>
-                <div>days away</div>
-                <div>weather</div>
+                <div id="current-trip-location">My trip to: <span id="current-trip-city"></span>, <span id="current-trip-country"></span></div>
+                <div id="current-trip-depart">Departing: <span id="current-trip-start-date"></span></div>
+                <div id="current-trip-depart">Returning: <span id="current-trip-end-date"></span></div>
+
+                <div>
+                    <button onclick="window.print();">save trip</button>
+                    <button onclick="Client.removeTrip()">remove trip</button>
+                </div>
+                <div id="current-trip-days-away"></div>
+                <div id="current-trip-duration"></div>
+                <div id="weather">
+                    <p>Typical weather for then is:</p>
+                    <p>
+                        High: <span id="current-trip-high-temp"></span>, 
+                        Low: <span id="current-trip-low-temp"></span>
+                    </p>
+                    <p id="current-trip-weather-desp"></p>
+                </div>
             </section>
+            </div>
+            </div>
         </div>
         <footer>
-            Matt Christensen
+            Udacity Capstone Project by Matt Christensen
         </footer>
         <script>
             // Check that service workers are supported
