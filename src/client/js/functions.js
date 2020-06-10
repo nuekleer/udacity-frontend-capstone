@@ -96,11 +96,7 @@ export const showData = async (url = "") =>{
         document.getElementById('current-trip-low-temp').innerHTML = allData.minTemp;
         document.getElementById('current-trip-weather-desp').innerHTML = allData.weatherD;
       
-        if(allData.picURL)
-            document.getElementById('current-trip-pic').src = allData.picURL;
-        else
-            document.getElementById('current-trip-pic').src = "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&w=1000&q=80";
-      
+        document.getElementById('current-trip-pic').src = allData.picURL;
     
         document.getElementById("current-trip").style.display = "block";
     }

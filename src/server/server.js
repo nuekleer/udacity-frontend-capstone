@@ -85,6 +85,10 @@ app.post('/getPic', async (req, res) =>{
     try {
       // Transform into JSON
       const allData = await request.json();
+      let pixURL = "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&w=1000&q=80";
+      if(Array.isArray(allData.hits) && allData.hits.length){
+        pixURL = allData.hits[0].webformatURL;
+      }
       newEntry = {
         countryName: projectData[0].countryName,
         city: projectData[0].city,
@@ -93,7 +97,7 @@ app.post('/getPic', async (req, res) =>{
         maxTemp: projectData[0].maxTemp,
         minTemp: projectData[0].minTemp,
         weatherD: projectData[0].weatherD,
-        picURL: allData.hits[0].webformatURL
+        picURL: pixURL
       }
       projectData[0] = newEntry;
       res.send(allData);
