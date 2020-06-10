@@ -49,7 +49,6 @@ app.post('/getWeather', async (req, res) =>{
         weatherD: allData.data[0].weather.description
       }
       projectData[0] = newEntry;
-      //return allData;
       res.send(allData);
     }
     catch(error) {
@@ -97,7 +96,6 @@ app.post('/getPic', async (req, res) =>{
         picURL: allData.hits[0].webformatURL
       }
       projectData[0] = newEntry;
-      //return allData;
       res.send(allData);
     }
     catch(error) {

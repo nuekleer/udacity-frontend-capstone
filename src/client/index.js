@@ -6,6 +6,7 @@ import { showData } from './js/functions'
 import { handleSubmit } from './js/app.js'
 import { handleShowForm } from './js/app.js'
 import { removeTrip } from './js/app.js'
+import { init } from './js/app.js'
 import './styles/resets.scss'
 import './styles/base.scss'
 import './styles/header.scss'
@@ -19,5 +20,6 @@ export {
     showData,
     handleSubmit,
     handleShowForm,
-    removeTrip
+    removeTrip,
+    init
 }
